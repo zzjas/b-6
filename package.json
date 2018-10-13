@@ -1,6 +1,6 @@
 {
   "fitbit": {
-    "appUUID": "e39dcd23-fd15-4e28-93da-25667be4d8ee",
+    "appUUID": "eba7e1ae-d269-4421-9c96-73bdffcc69ec",
     "appType": "app",
     "appDisplayName": "b-6",
     "iconFile": "resources/icon.png",
@@ -24,5 +24,8 @@
   },
   "dependencies": {
     "@fitbit/sdk-cli": "^1.0.2"
+  },
+  "scripts": {
+    "build": "fitbit-build"
   }
 }
