@@ -1,0 +1,28 @@
+{
+  "fitbit": {
+    "appUUID": "e39dcd23-fd15-4e28-93da-25667be4d8ee",
+    "appType": "app",
+    "appDisplayName": "b-6",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#607d8b",
+    "requestedPermissions": [
+      "access_heart_rate",
+      "access_activity"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "b-6"
+      }
+    }
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "^2.0.1"
+  },
+  "dependencies": {
+    "@fitbit/sdk-cli": "^1.0.2"
+  }
+}
