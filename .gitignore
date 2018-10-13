@@ -1,6 +1,11 @@
 /node_modules
+
 /fitbit/node_modules
-/build
+/fitbit/build
+
+/art/node_modules
+/art/output
+/art/output.mp4
 
 .DS_Store
 
