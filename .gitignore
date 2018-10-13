@@ -1,4 +1,5 @@
 /node_modules
+/fitbit/node_modules
 /build
 
 .DS_Store

@@ -59,5 +59,5 @@ function refreshData() {
   orientationData.text = JSON.stringify(data.orientation);
 }
 
-refreshData();
-setInterval(refreshData, 1000);
+//refreshData();
+//setInterval(refreshData, 1000);
