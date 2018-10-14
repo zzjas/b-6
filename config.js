@@ -7,7 +7,7 @@ module.exports = function (seed) {
     seed = String(Math.floor(Math.random() * 1000000));
   }
 
-  console.log('Seed:', seed);
+  //console.log('Seed:', seed);
 
   var randomFunc = seedRandom(seed);
   var random = createRandomRange(randomFunc);
@@ -36,7 +36,7 @@ module.exports = function (seed) {
     //startArea: random(0.0, 1.5),
     startArea: random(0.7, 1.5),
     //maxRadius: random(5, 100),
-    maxRadius: random(50, 100),
+    maxRadius: random(35, 80),
     lineStyle: random(1) > 0.5 ? 'round' : 'square',
     interval: random(0.001, 0.01),
     count: Math.floor(random(1000, 2000)),

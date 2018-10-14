@@ -35,12 +35,47 @@ document.body.style.margin = '0';
 document.body.style.overflow = 'hidden';
 canvas.style.position = 'absolute';
 
-/**************************OUR CODE *********************/
+/************************** Important *********************/
 
-var music = new Audio("./audio/sound.m4a");
+var music = new Audio("./audio/test.mp3");
 var playing = false;
 
-/**************************OUR CODE *********************/
+var score = 0;
+var combo = 0;
+var max_combo = 0;
+var result = "";
+
+function updateScoreBoard(userRatio) {
+  let tmp = score;
+  if(userRatio > 0.98) {
+    score += 6;
+    combo++;
+    result = "SSS+++";
+  }
+  else if(userRatio > 0.95) {
+    score += 3;
+    combo++;
+    result = "Perfect";
+  }
+  else if(userRatio > 0.9) {
+    score += 1;
+    combo++;
+    result = "Good";
+  }
+  else {
+    combo = 0;
+    result = "Miss";
+  }
+  max_combo = (combo > max_combo) ? combo : max_combo;
+  //console.log(result + " + " + (score - tmp));
+  //
+  document.getElementById('score').innerText = "Score: " + score;;
+  document.getElementById('combo').innerText = "Combo: " + combo;
+  document.getElementById('max_combo').innerText = "Max Combo: " + max_combo;
+  document.getElementById('result').innerText = result;
+}
+
+/************************** Important *********************/
 
 var randomize = (ev) => {
   if (ev) ev.preventDefault();
@@ -53,16 +88,14 @@ resize();
 const startGame = () => {
   music.play();
   var e = document.getElementById("start");
-  e.innerText = "Tap when circle fills up!";
+  e.innerText = "Tap Screen or Press Space when circle fills up!";
 }
 
 //TODO: change visibility
 const addEvents = (element) => {
   element.addEventListener('mousedown', (ev) => {
     if (ev.button === 0) {
-      console.log("Pressed music button");
-      playing = (playing || startGame()) || playing;
-      console.log("mousedown @ (" + ev.clientX + "," + ev.clientY + ")");
+      playing = (playing || startGame()) || true;
       randomize(ev);
     }
   });
@@ -93,19 +126,47 @@ function reload (config) {
     var renderer = createRenderer(opts);
     var game = createbeatGame(opts);
 
+    game.start();
+    if(!playing) { game.hold(); }
+
+    document.body.onkeyup = (e) => {
+      if(e.which === 32) {
+        console.log('Pressed space');
+        var userRatio = game.press();
+        updateScoreBoard(userRatio);
+        loop.stop();
+        randomize();
+      }
+    };
+
+    const userPlay = (element) => {
+      element.addEventListener('mousedown', (ev)=>{
+        console.log("mousedown @ (" + ev.clientX + "," + ev.clientY + ")");
+        var userRatio = game.press();
+        //console.log("Press Once, ratio is " + userRatio);
+        updateScoreBoard(userRatio);
+        var userRatio = game.press();
+        updateScoreBoard(userRatio);
+        loop.stop();
+        randomize();
+      });
+    };
+
+    targets.forEach(t => userPlay(t));
+
     if (opts.debugLuma) {
       renderer.debugLuma();
     } else {
       renderer.clear();
       var stepCount = 0;
+      console.log('Game start!!!!!');
       loop.on('tick', () => {
         renderer.step(opts.interval);
         stepCount++;
         game.step(stepCount);
         if (!opts.endlessBrowser && stepCount > opts.steps && !music.ended) {
+
           loop.stop();
-          console.log(music.duration);
-          console.log(music.ended);
           randomize();
         }
 
@@ -114,6 +175,7 @@ function reload (config) {
         //TODO: Add share here
         if(music.ended) {
           loop.stop();
+          alert("Good Game!")
         }
       });
       loop.start();
