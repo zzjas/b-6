@@ -11,6 +11,9 @@ var canvas = document.querySelector('#canvas');
 var background = new window.Image();
 var context = canvas.getContext('2d');
 
+var svg = document.querySelector('#svg');
+var rect = document.querySelector('#rect');
+
 var loop = createLoop();
 var seedContainer = document.querySelector('.seed-container');
 var seedText = document.querySelector('.seed-text');
@@ -51,6 +54,7 @@ resize();
 
 /* first time run the game */
 const startGame = () => {
+  svg.style.display="none";
   music.play();
   var e = document.getElementById("start");
   e.innerText = "Tap when circle fills up!";
@@ -60,16 +64,15 @@ const startGame = () => {
 const addEvents = (element) => {
   element.addEventListener('mousedown', (ev) => {
     if (ev.button === 0) {
-      console.log("Pressed music button");
+      console.log("mousedown on " + element + " @ (" + ev.clientX + "," + ev.clientY + ")");
       playing = (playing || startGame()) || playing;
-      console.log("mousedown @ (" + ev.clientX + "," + ev.clientY + ")");
       randomize(ev);
     }
   });
   element.addEventListener('touchstart', randomize);
 };
 
-const targets = [ document.querySelector('#fill'), canvas, document.getElementById("start") ];
+const targets = [ document.querySelector('#fill'), canvas, document.getElementById("start"), svg];
 targets.forEach(t => addEvents(t));
 
 function reload (config) {
@@ -114,6 +117,7 @@ function reload (config) {
         //TODO: Add share here
         if(music.ended) {
           loop.stop();
+          svg.style.display="block";
         }
       });
       loop.start();
@@ -124,7 +128,18 @@ function reload (config) {
 }
 
 function resize () {
-  letterbox(canvas, [ window.innerWidth, window.innerHeight ]);
+  var winh = window.innerHeight;
+  var winw = window.innerWidth;
+  console.log("window inner size: " + winw + "x" + winh);
+
+  letterbox(canvas, [ winw, winh ]);
+  rect.style.x = winw / 4;
+  rect.style.y = winh / 4;
+  rect.style.width = winw / 2;
+  rect.style.height = winh / 2;
+
+
+  console.log("rect at (" + rect.style.x + "," + rect.style.y + ")");
 }
 
 function getBestContrast (background, colors) {
