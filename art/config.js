@@ -1,6 +1,6 @@
 var seedRandom = require('seed-random');
-var palettes = require('./lib/color-palettes.json');
-var createRandomRange = require('./lib/random-range');
+var palettes = require('./lib/wander/color-palettes.json');
+var createRandomRange = require('./lib/wander/random-range');
 
 module.exports = function (seed) {
   if (typeof seed === 'undefined') {
@@ -33,12 +33,15 @@ module.exports = function (seed) {
     pointilism: random(0, 0.1),
     noiseScalar: [ random(0.000001, 0.000001), random(0.0002, 0.004) ],
     globalAlpha: 0.5,
-    startArea: random(0.0, 1.5),
-    maxRadius: random(5, 100),
+    //startArea: random(0.0, 1.5),
+    startArea: random(0.7, 1.5),
+    //maxRadius: random(5, 100),
+    maxRadius: random(50, 100),
     lineStyle: random(1) > 0.5 ? 'round' : 'square',
     interval: random(0.001, 0.01),
-    count: Math.floor(random(50, 2000)),
-    steps: Math.floor(random(100, 1000)),
+    count: Math.floor(random(1000, 2000)),
+    //steps: Math.floor(random(100, 1000)),
+    steps: 200,
     endlessBrowser: false, // Whether to endlessly step in browser
 
     // background image that drives the algorithm

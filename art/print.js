@@ -1,5 +1,5 @@
 var createConfig = require('./config');
-var createFileRenderer = require('./lib/createFileRenderer');
+var createFileRenderer = require('./lib/wander/createFileRenderer');
 
 // do all that jazz
 var seed = typeof process.argv[2] !== 'undefined'

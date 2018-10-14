@@ -2,7 +2,7 @@ require('fastclick')(document.body);
 
 var assign = require('object-assign');
 var createConfig = require('./config');
-var createRenderer = require('./lib/createRenderer');
+var createRenderer = require('./lib/wander/createRenderer');
 var createLoop = require('raf-loop');
 var contrast = require('wcag-contrast');
 
@@ -34,6 +34,15 @@ document.body.style.margin = '0';
 document.body.style.overflow = 'hidden';
 canvas.style.position = 'absolute';
 
+/**************************OUR CODE *********************/
+
+//var music = document.createElement("./audio/test.mp3");
+//music.play();
+//alert(music.duration);
+//alert(music.ended);
+
+/**************************OUR CODE *********************/
+
 var randomize = (ev) => {
   if (ev) ev.preventDefault();
   reload(createConfig());
@@ -44,7 +53,7 @@ resize();
 const addEvents = (element) => {
   element.addEventListener('mousedown', (ev) => {
     if (ev.button === 0) {
-      randomize(ev);
+      console.log("mousedown @ (" + ev.clientX + "," + ev.clientY + ")");
     }
   });
   element.addEventListener('touchstart', randomize);
@@ -83,6 +92,8 @@ function reload (config) {
         stepCount++;
         if (!opts.endlessBrowser && stepCount > opts.steps) {
           loop.stop();
+          console.log("loop dead!");
+          randomize();
         }
       });
       loop.start();

@@ -28,6 +28,7 @@
     "pad-left": "^2.1.0",
     "raf-loop": "^1.1.3",
     "random-float": "^1.0.0",
+    "robotjs": "^0.5.1",
     "seed-random": "^2.2.0",
     "simplex-noise": "^2.2.0",
     "smoothstep": "^1.0.1",
@@ -44,7 +45,7 @@
   },
   "scripts": {
     "test": "node test.js",
-    "ffmpeg": "ffmpeg -framerate 30 -i frames/test_%04d.png -y -s:v 1280x720 -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p output.mp4",
+    "ffmpeg": "ffmpeg -framerate 30 -i output/render_SEED_%*.png -y -s:v 1280x720 -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p output.mp4",
     "deploy": "surge -p .",
     "start": "budo browser.js:bundle.js --live -- -t babelify",
     "build": "browserify browser.js -t babelify | uglifyjs -m -c warnings=false > bundle.js"
