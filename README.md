@@ -1,9 +1,15 @@
 # B-6
-This is a fitbit app created in SD Hacks.
 
-# Team members
-Jinmou Li
+A music game running in static page.
 
-Yijia Yan
+Using color-wander as wheel for background art.
 
-Zijie Zhao
+## Usage
+
+Open the demo [here]().
+
+## Team members
+
+* snowme34
+* Yijia Yan
+* Zijie Zhao
