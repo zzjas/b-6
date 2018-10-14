@@ -2,7 +2,7 @@ require('fastclick')(document.body);
 
 var assign = require('object-assign');
 var createConfig = require('./config');
-var createRenderer = require('./lib/createRenderer');
+var createRenderer = require('./lib/wander/createRenderer');
 var createLoop = require('raf-loop');
 var contrast = require('wcag-contrast');
 
