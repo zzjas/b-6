@@ -100,7 +100,10 @@ const addEvents = (element) => {
       randomize(ev);
     }
   });
-  element.addEventListener('touchstart', randomize);
+  element.addEventListener('touchstart', ()=>{
+    playing = (playing || startGame()) || true;
+    randomize();
+  });
 };
 
 const targets = [ document.querySelector('#fill'), canvas, document.getElementById("start") ];
@@ -146,7 +149,12 @@ function reload (config) {
         var userRatio = game.press();
         //console.log("Press Once, ratio is " + userRatio);
         updateScoreBoard(userRatio);
+        loop.stop();
+        randomize();
+      });
+      element.addEventListener('touchstart', ()=> {
         var userRatio = game.press();
+        //console.log("Press Once, ratio is " + userRatio);
         updateScoreBoard(userRatio);
         loop.stop();
         randomize();
