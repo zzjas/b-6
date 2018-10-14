@@ -37,6 +37,7 @@ document.body.style.overflow = 'hidden';
 canvas.style.position = 'absolute';
 
 /************************** Important *********************/
+console.log('Build for phone');
 
 var music = new Audio("./audio/test.mp3");
 var playing = false;
@@ -135,7 +136,6 @@ function reload (config) {
 
     document.body.onkeyup = (e) => {
       if(e.which === 32) {
-        console.log('Pressed space');
         var userRatio = game.press();
         updateScoreBoard(userRatio);
         loop.stop();
@@ -168,7 +168,6 @@ function reload (config) {
     } else {
       renderer.clear();
       var stepCount = 0;
-      console.log('Game start!!!!!');
       loop.on('tick', () => {
         renderer.step(opts.interval);
         stepCount++;
