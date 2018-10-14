@@ -36,10 +36,7 @@ canvas.style.position = 'absolute';
 
 /**************************OUR CODE *********************/
 
-//var music = document.createElement("./audio/test.mp3");
-//music.play();
-//alert(music.duration);
-//alert(music.ended);
+var music = new Audio("./audio/short.m4a");
 
 /**************************OUR CODE *********************/
 
@@ -50,10 +47,14 @@ var randomize = (ev) => {
 randomize();
 resize();
 
+//TODO: change visibility
 const addEvents = (element) => {
   element.addEventListener('mousedown', (ev) => {
     if (ev.button === 0) {
+      console.log("Pressed music button");
+      music.play();
       console.log("mousedown @ (" + ev.clientX + "," + ev.clientY + ")");
+      randomize(ev);
     }
   });
   element.addEventListener('touchstart', randomize);
@@ -90,10 +91,18 @@ function reload (config) {
       loop.on('tick', () => {
         renderer.step(opts.interval);
         stepCount++;
-        if (!opts.endlessBrowser && stepCount > opts.steps) {
+        if (!opts.endlessBrowser && stepCount > opts.steps && !music.ended) {
           loop.stop();
-          console.log("loop dead!");
+          console.log(music.duration);
+          console.log(music.ended);
           randomize();
+        }
+
+        //TODO: Add blur here
+        //TODO: Add score here
+        //TODO: Add share here
+        if(music.ended) {
+          loop.stop();
         }
       });
       loop.start();

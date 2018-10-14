@@ -32,9 +32,23 @@
   .seed-text {
     font-weight: 700;
   }
+  /* TODO: display */
   .howto {
-    font-size: 9px;
+    font-size: 20px;
+    display: none;
   }
+
+  /* TODO: display */
+  .start {
+    font-weight: 1000;
+    font-size: 30px;
+    display: inline;
+  }
+
+  .start:hover {
+    opacity: 0.6;
+  }
+
   #fill {
     cursor: pointer;
     position: absolute;
@@ -50,7 +64,8 @@
   <canvas id="canvas" class="noselect"></canvas>
   <header class="seed-container">
   <div>seed – <span class="seed-text">12380</span></div>
-  <div class="howto">tap to randomize</div>
+  <div class="howto">Tap when circle fills up!</div>
+  <div class="start">Tap anywhere to start music!</div>
   </header>
   <script src="bundle.js"></script>
 </body>
