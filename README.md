@@ -12,4 +12,4 @@ Open the demo [here]().
 
 * snowme34
 * Yijia Yan
-* Zijie Zhao
+* zzjas
