@@ -9,6 +9,7 @@ var contrast = require('wcag-contrast');
 
 var canvas = document.querySelector('#canvas');
 var background = new window.Image();
+background.crossOrigin = "Anonymous";
 var context = canvas.getContext('2d');
 
 var loop = createLoop();
