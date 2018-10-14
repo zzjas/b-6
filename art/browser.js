@@ -36,10 +36,10 @@ canvas.style.position = 'absolute';
 
 /**************************OUR CODE *********************/
 
-var music = document.createElement("./audio/test.mp3");
-music.play();
-alert(music.duration);
-alert(music.ended);
+//var music = document.createElement("./audio/test.mp3");
+//music.play();
+//alert(music.duration);
+//alert(music.ended);
 
 /**************************OUR CODE *********************/
 
