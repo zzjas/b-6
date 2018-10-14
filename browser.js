@@ -151,16 +151,14 @@ function reload (config) {
         //console.log("Press Once, ratio is " + userRatio);
         updateScoreBoard(userRatio);
         loop.stop();
-        playTimes++;
-        if(playTimes >= 3) { randomize(); }
+        randomize();
       });
       element.addEventListener('touchstart', ()=> {
         var userRatio = game.press();
         //console.log("Press Once, ratio is " + userRatio);
         updateScoreBoard(userRatio);
         loop.stop();
-        playTimes++;
-        if(playTimes >= 3) { randomize(); }
+        randomize();
       });
     };
 
