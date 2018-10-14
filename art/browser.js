@@ -3,6 +3,7 @@ require('fastclick')(document.body);
 var assign = require('object-assign');
 var createConfig = require('./config');
 var createRenderer = require('./lib/wander/createRenderer');
+var createbeatGame = require('./lib/cbeat/beatGame');
 var createLoop = require('raf-loop');
 var contrast = require('wcag-contrast');
 
@@ -90,6 +91,7 @@ function reload (config) {
 
   background.onload = () => {
     var renderer = createRenderer(opts);
+    var game = createbeatGame(opts);
 
     if (opts.debugLuma) {
       renderer.debugLuma();
@@ -99,6 +101,7 @@ function reload (config) {
       loop.on('tick', () => {
         renderer.step(opts.interval);
         stepCount++;
+        game.step(stepCount);
         if (!opts.endlessBrowser && stepCount > opts.steps && !music.ended) {
           loop.stop();
           console.log(music.duration);
