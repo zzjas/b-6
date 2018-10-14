@@ -36,7 +36,7 @@ canvas.style.position = 'absolute';
 
 /**************************OUR CODE *********************/
 
-var music = new Audio("./audio/short.m4a");
+var music = new Audio("./audio/sound.m4a");
 var playing = false;
 
 /**************************OUR CODE *********************/
