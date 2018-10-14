@@ -40,8 +40,7 @@ module.exports = function (seed) {
     lineStyle: random(1) > 0.5 ? 'round' : 'square',
     interval: random(0.001, 0.01),
     count: Math.floor(random(1000, 2000)),
-    //steps: Math.floor(random(100, 1000)),
-    steps: 200,
+    steps: Math.floor(random(100, 400)), // Change back to random
     endlessBrowser: false, // Whether to endlessly step in browser
 
     // background image that drives the algorithm
