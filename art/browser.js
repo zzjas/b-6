@@ -34,6 +34,15 @@ document.body.style.margin = '0';
 document.body.style.overflow = 'hidden';
 canvas.style.position = 'absolute';
 
+/**************************OUR CODE *********************/
+
+var music = document.createElement("./audio/test.mp3");
+music.play();
+alert(music.duration);
+alert(music.ended);
+
+/**************************OUR CODE *********************/
+
 var randomize = (ev) => {
   if (ev) ev.preventDefault();
   reload(createConfig());
