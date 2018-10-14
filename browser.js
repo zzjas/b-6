@@ -130,6 +130,7 @@ function reload (config) {
   background.onload = () => {
     var renderer = createRenderer(opts);
     var game = createbeatGame(opts);
+    var playTimes = 0;
 
     game.start();
     if(!playing) { game.hold(); }
@@ -150,14 +151,16 @@ function reload (config) {
         //console.log("Press Once, ratio is " + userRatio);
         updateScoreBoard(userRatio);
         loop.stop();
-        randomize();
+        playTimes++;
+        if(playTimes >= 3) { randomize(); }
       });
       element.addEventListener('touchstart', ()=> {
         var userRatio = game.press();
         //console.log("Press Once, ratio is " + userRatio);
         updateScoreBoard(userRatio);
         loop.stop();
-        randomize();
+        playTimes++;
+        if(playTimes >= 3) { randomize(); }
       });
     };
 
@@ -169,8 +172,10 @@ function reload (config) {
       renderer.clear();
       var stepCount = 0;
       loop.on('tick', () => {
+        stepCount+=2;
         renderer.step(opts.interval);
-        stepCount++;
+        renderer.step(opts.interval);
+        game.step(stepCount);
         game.step(stepCount);
         if (!opts.endlessBrowser && stepCount > opts.steps && !music.ended) {
 
