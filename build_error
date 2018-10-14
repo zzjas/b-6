@@ -4,3 +4,171 @@ Step #1: npm WARN deprecated node-uuid@1.4.8: Use uuid module instead
 Step #1: npm WARN deprecated hoek@0.9.1: The major version is no longer supported. Please update to 4.x or newer
 Step #1: npm WARN deprecated du@0.1.0: no longer maintained
 Step #1: npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+
+
+Step #1: npm WARN deprecated tar.gz@0.1.1: ⚠️  WARNING ⚠️ tar.gz module has been deprecated and your application is vulnerable. Please use tar module instead: https://npmjs.com/tar
+Step #1: npm WARN deprecated graceful-fs@3.0.11: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js
+Step #1: npm WARN deprecated node-uuid@1.4.8: Use uuid module instead
+Step #1: npm WARN deprecated hoek@0.9.1: The major version is no longer supported. Please update to 4.x or newer
+DEBUG: Operation [operations/build/sdhacks-b-6/MjEwMGY1NWUtNmVkNy00YjVjLWI2M2MtYjAyYjk5MGQyMzNh] not complete. Waiting 1s.
+DEBUG: Reading GCS logfile: 416 (no new content; keep polling)
+DEBUG: Operation [operations/build/sdhacks-b-6/MjEwMGY1NWUtNmVkNy00YjVjLWI2M2MtYjAyYjk5MGQyMzNh] not complete. Waiting 1s.
+DEBUG: Reading GCS logfile: 416 (no new content; keep polling)
+DEBUG: Operation [operations/build/sdhacks-b-6/MjEwMGY1NWUtNmVkNy00YjVjLWI2M2MtYjAyYjk5MGQyMzNh] not complete. Waiting 1s.
+DEBUG: Reading GCS logfile: 416 (no new content; keep polling)
+DEBUG: Operation [operations/build/sdhacks-b-6/MjEwMGY1NWUtNmVkNy00YjVjLWI2M2MtYjAyYjk5MGQyMzNh] not complete. Waiting 1s.
+DEBUG: Reading GCS logfile: 206 (read 286 bytes)
+Step #1: npm WARN deprecated du@0.1.0: no longer maintained
+Step #1: npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+DEBUG: Operation [operations/build/sdhacks-b-6/MjEwMGY1NWUtNmVkNy00YjVjLWI2M2MtYjAyYjk5MGQyMzNh] not complete. Waiting 1s.
+DEBUG: Reading GCS logfile: 416 (no new content; keep polling)
+DEBUG: Operation [operations/build/sdhacks-b-6/MjEwMGY1NWUtNmVkNy00YjVjLWI2M2MtYjAyYjk5MGQyMzNh] not complete. Waiting 1s.
+DEBUG: Reading GCS logfile: 206 (read 110 bytes)
+Step #1: 
+Step #1: > canvas@1.6.13 install /app/node_modules/canvas
+Step #1: > node-gyp rebuild
+Step #1: 
+DEBUG: Operation [operations/build/sdhacks-b-6/MjEwMGY1NWUtNmVkNy00YjVjLWI2M2MtYjAyYjk5MGQyMzNh] not complete. Waiting 1s.
+DEBUG: Reading GCS logfile: 206 (read 1635 bytes)
+Step #1: ./util/has_lib.sh: 31: ./util/has_lib.sh: pkg-config: not found
+Step #1: gyp: Call to './util/has_lib.sh freetype' returned exit status 0 while in binding.gyp. while trying to load binding.gyp
+Step #1: gyp ERR! configure error 
+Step #1: gyp ERR! stack Error: `gyp` failed with exit code: 1
+Step #1: gyp ERR! stack     at ChildProcess.onCpExit (/nodejs/lib/node_modules/npm/node_modules/node-gyp/lib/configure.js:345:16)
+Step #1: gyp ERR! stack     at emitTwo (events.js:126:13)
+Step #1: gyp ERR! stack     at ChildProcess.emit (events.js:214:7)
+Step #1: gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:198:12)
+Step #1: gyp ERR! System Linux 4.4.0-137-generic
+Step #1: gyp ERR! command "/nodejs/bin/node" "/nodejs/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+Step #1: gyp ERR! cwd /app/node_modules/canvas
+Step #1: gyp ERR! node -v v8.12.0
+Step #1: gyp ERR! node-gyp -v v3.8.0
+Step #1: gyp ERR! not ok 
+DEBUG: Operation [operations/build/sdhacks-b-6/MjEwMGY1NWUtNmVkNy00YjVjLWI2M2MtYjAyYjk5MGQyMzNh] complete. Result: {
+    "metadata": {
+        "@type": "type.googleapis.com/google.devtools.cloudbuild.v1.BuildOperationMetadata", 
+        "build": {
+            "finishTime": "2018-10-14T08:45:31.863332004Z", 
+            "status": "FAILURE", 
+            "timeout": "600s", 
+            "startTime": "2018-10-14T08:44:50.574570806Z", 
+            "artifacts": {
+                "images": [
+                    "us.gcr.io/sdhacks-b-6/appengine/default.20181014t014432:latest"
+                ]
+            }, 
+            "logsBucket": "staging.sdhacks-b-6.appspot.com", 
+            "results": {
+                "buildStepImages": [
+                    "", 
+                    ""
+                ]
+            }, 
+            "id": "2100f55e-6ed7-4b5c-b63c-b02b990d233a", 
+            "timing": {
+                "FETCHSOURCE": {
+                    "endTime": "2018-10-14T08:44:55.357029340Z", 
+                    "startTime": "2018-10-14T08:44:52.154246159Z"
+                }, 
+                "BUILD": {
+                    "endTime": "2018-10-14T08:45:31.619006645Z", 
+                    "startTime": "2018-10-14T08:44:55.370858028Z"
+                }
+            }, 
+            "source": {
+                "storageSource": {
+                    "object": "us.gcr.io/sdhacks-b-6/appengine/default.20181014t014432:latest", 
+                    "bucket": "staging.sdhacks-b-6.appspot.com"
+                }
+            }, 
+            "options": {
+                "substitutionOption": "ALLOW_LOOSE", 
+                "logging": "LEGACY"
+            }, 
+            "steps": [
+                {
+                    "status": "SUCCESS", 
+                    "name": "gcr.io/gcp-runtimes/nodejs/gen-dockerfile@sha256:ac45b71bb6abfbf55fb6900c647185c1139af58b1da6c1055ef7dd7d833e37a5", 
+                    "args": [
+                        "--runtime-image", 
+                        "gcr.io/google-appengine/nodejs@sha256:5add6da6c28ce58ffe690fe949a8776726b0c6fd2f1c18ca484cff7ada895c33"
+                    ], 
+                    "env": [
+                        "GAE_APPLICATION_YAML_PATH=app.yaml"
+                    ], 
+                    "timing": {
+                        "endTime": "2018-10-14T08:44:56.849916252Z", 
+                        "startTime": "2018-10-14T08:44:55.370895658Z"
+                    }, 
+                    "pullTiming": {
+                        "endTime": "2018-10-14T08:44:55.906917067Z", 
+                        "startTime": "2018-10-14T08:44:55.370895658Z"
+                    }
+                }, 
+                {
+                    "status": "FAILURE", 
+                    "name": "gcr.io/cloud_builders/docker@sha256:2044bcd0596ce72c420821c246833f22189f9545894e521456b7988ee8aa4d6d", 
+                    "args": [
+                        "build", 
+                        "-t", 
+                        "us.gcr.io/sdhacks-b-6/appengine/default.20181014t014432:latest", 
+                        "."
+                    ], 
+                    "env": [
+                        "GAE_APPLICATION_YAML_PATH=app.yaml"
+                    ], 
+                    "timing": {
+                        "endTime": "2018-10-14T08:45:31.566845511Z", 
+                        "startTime": "2018-10-14T08:44:56.849931323Z"
+                    }, 
+                    "pullTiming": {
+                        "endTime": "2018-10-14T08:45:17.115776353Z", 
+                        "startTime": "2018-10-14T08:44:56.849931323Z"
+                    }
+                }
+            ], 
+            "sourceProvenance": {
+                "resolvedStorageSource": {
+                    "generation": "1539506689221474", 
+                    "object": "us.gcr.io/sdhacks-b-6/appengine/default.20181014t014432:latest", 
+                    "bucket": "staging.sdhacks-b-6.appspot.com"
+                }, 
+                "fileHashes": {
+                    "gs://staging.sdhacks-b-6.appspot.com/us.gcr.io/sdhacks-b-6/appengine/default.20181014t014432:latest#1539506689221474": {}
+                }
+            }, 
+            "projectId": "sdhacks-b-6", 
+            "images": [
+                "us.gcr.io/sdhacks-b-6/appengine/default.20181014t014432:latest"
+            ], 
+            "substitutions": {
+                "_GAE_APPLICATION_YAML_PATH": "app.yaml", 
+                "_OUTPUT_IMAGE": "us.gcr.io/sdhacks-b-6/appengine/default.20181014t014432:latest"
+            }, 
+            "createTime": "2018-10-14T08:44:50.025105428Z", 
+            "logUrl": "https://console.cloud.google.com/gcr/builds/2100f55e-6ed7-4b5c-b63c-b02b990d233a?project=176715399764"
+        }
+    }, 
+    "done": true, 
+    "name": "operations/build/sdhacks-b-6/MjEwMGY1NWUtNmVkNy00YjVjLWI2M2MtYjAyYjk5MGQyMzNh", 
+    "error": {
+        "message": "Build failed; check build logs for details", 
+        "code": 2
+    }
+}
+DEBUG: Reading GCS logfile: 206 (read 1206 bytes)
+Step #1: npm ERR! code ELIFECYCLE
+Step #1: npm ERR! errno 1
+Step #1: npm ERR! canvas@1.6.13 install: `node-gyp rebuild`
+Step #1: npm ERR! Exit status 1
+Step #1: npm ERR! 
+Step #1: npm ERR! Failed at the canvas@1.6.13 install script.
+Step #1: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+Step #1: 
+Step #1: npm ERR! A complete log of this run can be found in:
+Step #1: npm ERR!     /root/.npm/_logs/2018-10-14T08_45_31_228Z-debug.log
+Step #1: The command '/bin/sh -c npm install --unsafe-perm ||   ((if [ -f npm-debug.log ]; then       cat npm-debug.log;     fi) && false)' returned a non-zero code: 1
+Finished Step #1
+ERROR
+ERROR: build step 1 "gcr.io/cloud_builders/docker@sha256:2044bcd0596ce72c420821c246833f22189f9545894e521456b7988ee8aa4d6d" failed: exit status 1
+Step #1:
