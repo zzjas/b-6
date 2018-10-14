@@ -39,7 +39,7 @@ canvas.style.position = 'absolute';
 /************************** Important *********************/
 console.log('Build for phone');
 
-var music = new Audio("./audio/test.mp3");
+var music = new Audio("./audio/bg.m4a");
 var playing = false;
 
 var score = 0;
