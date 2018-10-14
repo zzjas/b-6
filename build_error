@@ -1,0 +1,6 @@
+npm WARN deprecated tar.gz@0.1.1: ⚠️  WARNING ⚠️ tar.gz module has been deprecated and your application is vulnerable. Please use tar module instead: https://npmjs.com/tar
+Step #1: npm WARN deprecated graceful-fs@3.0.11: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js
+Step #1: npm WARN deprecated node-uuid@1.4.8: Use uuid module instead
+Step #1: npm WARN deprecated hoek@0.9.1: The major version is no longer supported. Please update to 4.x or newer
+Step #1: npm WARN deprecated du@0.1.0: no longer maintained
+Step #1: npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
