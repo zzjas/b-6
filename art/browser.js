@@ -36,7 +36,8 @@ canvas.style.position = 'absolute';
 
 /**************************OUR CODE *********************/
 
-var music = new Audio("./audio/short.m4a");
+var music = new Audio("./audio/test.mp3");
+var playing = false;
 
 /**************************OUR CODE *********************/
 
@@ -47,12 +48,19 @@ var randomize = (ev) => {
 randomize();
 resize();
 
+/* first time run the game */
+const startGame = () => {
+  music.play();
+  var e = document.getElementById("start");
+  e.innerText = "Tap when circle fills up!";
+}
+
 //TODO: change visibility
 const addEvents = (element) => {
   element.addEventListener('mousedown', (ev) => {
     if (ev.button === 0) {
       console.log("Pressed music button");
-      music.play();
+      playing = (playing || startGame()) || playing;
       console.log("mousedown @ (" + ev.clientX + "," + ev.clientY + ")");
       randomize(ev);
     }
@@ -60,7 +68,7 @@ const addEvents = (element) => {
   element.addEventListener('touchstart', randomize);
 };
 
-const targets = [ document.querySelector('#fill'), canvas ];
+const targets = [ document.querySelector('#fill'), canvas, document.getElementById("start") ];
 targets.forEach(t => addEvents(t));
 
 function reload (config) {
