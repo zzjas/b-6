@@ -44,7 +44,7 @@ resize();
 const addEvents = (element) => {
   element.addEventListener('mousedown', (ev) => {
     if (ev.button === 0) {
-      randomize(ev);
+      console.log("mousedown @ (" + ev.clientX + "," + ev.clientY + ")");
     }
   });
   element.addEventListener('touchstart', randomize);
@@ -83,6 +83,8 @@ function reload (config) {
         stepCount++;
         if (!opts.endlessBrowser && stepCount > opts.steps) {
           loop.stop();
+          console.log("loop dead!");
+          randomize();
         }
       });
       loop.start();
