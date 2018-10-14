@@ -52,10 +52,10 @@
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "git://github.com/mattdesl/color-wander.git"
+    "url": "git://github.com/zzjas/b-6.git"
   },
-  "homepage": "https://github.com/mattdesl/color-wander",
+  "homepage": "https://github.com/zzjas/b-6",
   "bugs": {
-    "url": "https://github.com/mattdesl/color-wander/issues"
+    "url": "https://github.com/zzjas/b-6/issues"
   }
 }
