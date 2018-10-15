@@ -128,6 +128,7 @@ function reload (config) {
   seedText.textContent = opts.seedName;
 
   background.onload = () => {
+    if(!playing) { opts.steps *= 3; }
     var renderer = createRenderer(opts);
     var game = createbeatGame(opts);
     var playTimes = 0;
@@ -170,11 +171,14 @@ function reload (config) {
       renderer.clear();
       var stepCount = 0;
       loop.on('tick', () => {
-        stepCount+=2;
-        renderer.step(opts.interval);
+        stepCount++;
         renderer.step(opts.interval);
         game.step(stepCount);
-        game.step(stepCount);
+        if(playing) {
+          stepCount++;
+          renderer.step(opts.interval);
+          game.step(stepCount);
+        }
         if (!opts.endlessBrowser && stepCount > opts.steps && !music.ended) {
 
           loop.stop();
